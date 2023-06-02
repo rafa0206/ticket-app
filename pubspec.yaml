@@ -30,6 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^6.0.5
+  http: ^0.13.6
+  mask_text_input_formatter: ^2.4.0
+  intl:
+  shared_preferences: ^2.1.1
+  dio: ^5.1.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -57,6 +63,10 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: SF Mono
+      fonts:
+        - asset: assets/fonts/SF-Mono-Medium.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
