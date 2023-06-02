@@ -24,36 +24,13 @@ class UserApi {
       );
       if (response.statusCode == 200) {
         var responseData = json.decode(utf8.decode(response.bodyBytes));
-        print('responseData: $responseData');
-        // User user = User.fromJson(responseData['data']);
         User user = User.fromJson(responseData);
         return user;
       } else {
         return null;
       }
-    } on Exception catch (error) {
-      print("LOG[UsuarioApi.signIn] - error $error");
+    } on Exception {
       return null;
     }
   }
-
-  /*Future<void> signOut() async {
-    try {
-      String url = 'http://54.90.203.92/auth/logout';
-
-      var response = await http.post(
-        Uri.parse(url),
-        headers: {'Content-Type': 'application/json'},
-      );
-
-      if (response.statusCode == 200) {
-        return;
-      } else {
-        return null;
-      }
-    } on Exception catch (error) {
-      print("LOG[UsuarioApi.signIn] - error $error");
-      return null;
-    }
-  }*/
 }

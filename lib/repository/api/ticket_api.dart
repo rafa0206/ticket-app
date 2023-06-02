@@ -28,20 +28,16 @@ class TicketApi {
       );
 
       if (response.statusCode != 200) {
-        print("LOG[TicketApi.getTickets] - status != 200");
         return null;
       }
 
       var responseData = json.decode(utf8.decode(response.bodyBytes));
-      print('responseData: $responseData');
       tickets = (responseData as List).map((json) {
         return Ticket.fromJson(json as Map<String, dynamic>);
       }).toList();
 
-      print(tickets);
       return tickets;
-    } on Exception catch (error) {
-      print("LOG[TicketApi.getTickets] - error $error");
+    } on Exception {
       return null;
     }
   }
@@ -65,23 +61,16 @@ class TicketApi {
 
       var response = await http.post(
         Uri.parse(url),
-        headers: {
-          'Authorization': authorization
-        },
+        headers: {'Authorization': authorization},
         body: map,
       );
       if (response.statusCode == 200) {
-        var responseData = json.decode(utf8.decode(response.bodyBytes));
-        print('responseData: $responseData');
-        // Ticket ticket = Ticket.fromJsonOpenTicket(responseData);
         String message = 'Chamado aberto';
         return message;
       } else {
         return null;
       }
-
-    } on Exception catch (error) {
-      print("LOG[ProductApi.register] - error $error");
+    } on Exception {
       return null;
     }
   }

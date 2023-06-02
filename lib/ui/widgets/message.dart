@@ -13,32 +13,32 @@ class Message extends StatelessWidget {
 
   static void onSuccess(
       {required GlobalKey<ScaffoldMessengerState> scaffoldKey,
-        required String message,
-        required int seconds,
-        required Function onPop}) {
+      required String message,
+      required int seconds,
+      required Function onPop}) {
     ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
       SnackBar(
         content: Text(message, style: const TextStyle(color: Colors.white)),
         backgroundColor: AppTheme.mainBlue,
-        duration: Duration(seconds: seconds ?? 3),
+        duration: Duration(seconds: seconds),
       ),
     );
 
-    Future.delayed(Duration(seconds: seconds ?? 3), () {
+    Future.delayed(Duration(seconds: seconds), () {
       onPop();
     });
   }
 
   static void onFail(
       {required GlobalKey<ScaffoldMessengerState> scaffoldKey,
-        required String message,
-        required int seconds,
-        Function? onPop}) {
+      required String message,
+      required int seconds,
+      Function? onPop}) {
     ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
       SnackBar(
         content: Text(message, style: const TextStyle(color: Colors.white)),
         backgroundColor: AppTheme.mainBlue,
-        duration: Duration(seconds: seconds ?? 3),
+        duration: Duration(seconds: seconds),
       ),
     );
   }
@@ -50,8 +50,7 @@ class Message extends StatelessWidget {
         width: width ?? 40,
         height: height ?? 40,
         child: CircularProgressIndicator(
-          valueColor:
-          const AlwaysStoppedAnimation<Color>(AppTheme.mainBlue),
+          valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.mainBlue),
           strokeWidth: strokeWidth ?? 5,
         ),
       ),
@@ -73,14 +72,14 @@ class Message extends StatelessWidget {
 
   static void onCheckEmail(
       {required GlobalKey<ScaffoldMessengerState> scaffoldKey,
-        required String message,
-        required int seconds,
-        Function? onPop}) {
+      required String message,
+      required int seconds,
+      Function? onPop}) {
     ScaffoldMessenger.of(scaffoldKey.currentContext!).showSnackBar(
       SnackBar(
         content: Text(message, style: const TextStyle(color: Colors.white)),
         backgroundColor: AppTheme.mainBlue,
-        duration: Duration(seconds: seconds ?? 3),
+        duration: Duration(seconds: seconds),
       ),
     );
   }

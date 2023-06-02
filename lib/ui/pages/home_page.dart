@@ -40,7 +40,6 @@ class _HomePageState extends State<HomePage> {
               color: AppTheme.mainBlue,
             ),
             const SizedBox(
-              // height: 20,
               height: 10,
             ),
             CustomButton(
@@ -51,9 +50,6 @@ class _HomePageState extends State<HomePage> {
                     return const OpenTicketPage();
                   }));
                 }),
-            // const SizedBox(
-            //   height: 10,
-            // ),
           ],
         ),
       ),

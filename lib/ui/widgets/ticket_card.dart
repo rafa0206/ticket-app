@@ -40,7 +40,6 @@ class _TicketCardState extends State<TicketCard> {
                   children: [
                     Text(
                       widget.ticket.subject,
-                      // '${widget.ticket.subject} ${widget.ticket.modelName} ${widget.ticket.year}',
                       style: const TextStyle(
                           color: Colors.black,
                           fontFamily: 'SF-Mono',
@@ -52,9 +51,7 @@ class _TicketCardState extends State<TicketCard> {
                     ),
                     Text(
                       'Status: ${widget.ticket.status}\n'
-                          'Prioridade: ${widget.ticket.priority}\n',
-                          /*'Valor Fipe: ${widget.ticket.fipeValue}\n'
-                          'Cor: ${widget.ticket.color}',*/
+                      'Prioridade: ${widget.ticket.priority}\n',
                       style: const TextStyle(
                         color: AppTheme.mainDarkGrey,
                         fontFamily: 'SF-Mono',

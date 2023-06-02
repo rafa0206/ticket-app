@@ -16,7 +16,6 @@ class UserRepository {
 
   Future<User?> getUser() async {
     var instance = await SharedPreferences.getInstance();
-    // String? userString = await instance.getString('user.prefs');
     String? userString = instance.getString('user.prefs');
     if (userString!.isEmpty) {
       return null;
@@ -25,10 +24,4 @@ class UserRepository {
     User user = User.fromJson(userJson as Map<String, dynamic>);
     return user;
   }
-
-  //logout
-  /*Future<void> deleteUser() async {
-    var instance = await SharedPreferences.getInstance();
-    await instance.setString('user.prefs', '');
-  }*/
 }

@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> with LoginValidator {
                     controller: _emailController,
                     keyboardType: TextInputType.text,
                     labelText: 'Email',
-                    hintText: 'example@email.com',
+                    hintText: 'example@email.com.br',
                     iconForm: const Icon(
                       (Icons.mail),
                       color: AppTheme.mainBlue,
@@ -93,13 +93,13 @@ class _LoginPageState extends State<LoginPage> with LoginValidator {
                       },
                       child: obscureText
                           ? const Icon(
-                        (Icons.visibility_off_sharp),
-                        color: AppTheme.mainBlue,
-                      )
+                              (Icons.visibility_off_sharp),
+                              color: AppTheme.mainBlue,
+                            )
                           : const Icon(
-                        (Icons.visibility),
-                        color: AppTheme.mainBlue,
-                      ),
+                              (Icons.visibility),
+                              color: AppTheme.mainBlue,
+                            ),
                     ),
                     validator: validatePassword),
                 const SizedBox(
@@ -114,14 +114,6 @@ class _LoginPageState extends State<LoginPage> with LoginValidator {
                 const SizedBox(
                   height: 30,
                 ),
-                /*CustomButton(
-                  textButton: 'CADASTRAR',
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                        const RegisterPage()));
-                  },
-                ),*/
               ],
             ),
           ],

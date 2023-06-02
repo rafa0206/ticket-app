@@ -20,12 +20,10 @@ class TicketApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'SF-Mono',
-        // primaryColor: Colors.amber,
         appBarTheme: const AppBarTheme(color: AppTheme.mainBlue),
         scaffoldBackgroundColor: Colors.white,
       ),
       home: const LoginPage(),
-      // home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

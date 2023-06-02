@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:ticket_app/entities/ticket.dart';
 import 'package:ticket_app/models/ticket_model.dart';
 import 'package:ticket_app/models/user_model.dart';
@@ -19,7 +17,6 @@ class OpenTicketPage extends StatefulWidget {
 }
 
 class _OpenTicketPageState extends State<OpenTicketPage> with DefaultValidator {
-
   final FocusNode _focusDescription = FocusNode();
 
   final _nameTicketController = TextEditingController();
@@ -44,14 +41,10 @@ class _OpenTicketPageState extends State<OpenTicketPage> with DefaultValidator {
             maxLines: 2,
             textAlign: TextAlign.center,
             style: TextStyle(
-                // color: AppTheme.mainBlue,
                 fontFamily: 'SF-Mono',
-                // fontSize: 14,
                 fontSize: 16,
                 fontWeight: FontWeight.w700),
           ),
-          // backgroundColor: Color(0xffF7F2F8),
-          // backgroundColor: AppTheme.mainGrey,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -85,18 +78,12 @@ class _OpenTicketPageState extends State<OpenTicketPage> with DefaultValidator {
                       const SizedBox(height: 16),
                       const Divider(
                         thickness: 1,
-                        // color: Color(0xffBEBBBB),
                         color: AppTheme.mainDarkGrey,
-                        // endIndent: 22,
-                        // indent: 22,
-                        // endIndent: 10,
-                        // indent: 10,
                       ),
                       const SizedBox(height: 16),
                       CustomButton(
                         onTap: () {
                           _openTicketOnPressed(context);
-                          // _updateStock(context);
                         },
                         textButton: 'ABRIR CHAMADO',
                       ),
@@ -129,8 +116,9 @@ class _OpenTicketPageState extends State<OpenTicketPage> with DefaultValidator {
           scaffoldKey: _scaffoldKey,
           message: 'Chamado aberto com sucesso',
           seconds: 2,
-          onPop: (value) {
+          onPop: () {
             Navigator.of(context).pop();
+            TicketModel.of(context).fetchTickets();
           });
       _nameTicketController.text = '';
       _descriptionController.text = '';
